@@ -16,7 +16,7 @@ Get an GraphQL server using TypeGraphQL and PostgreSQL up and running in seconds
 
 2. Run ``yarn install`` on your terminal to get all the dependencies.
 
-3. Get your PostgreSQL services up and running but it's not mandatory to use PgSQL.
+3. Get your PostgreSQL services up and running.
 
 4. Check the ``ormconfig.json`` file:
 
@@ -44,6 +44,16 @@ Get an GraphQL server using TypeGraphQL and PostgreSQL up and running in seconds
 6. Apollo server must be listening on: ``http://localhost:4000/graphql``.
 
 7. Everything is setup so far, happy coding 😉.
+
+## Why fractal design ✨
+
+1. Gives us phenomenal scale.
+
+2. Easy to debug as everything go with the domain logic flow.
+
+3. Easy to onboard a new developer to this codebase.
+
+Read more here: [Structure your Node js Apps](https://overflowjs.com/posts/Structure-Nodejs-App-Fractal-Pattern.html)
 
 ## License
 
