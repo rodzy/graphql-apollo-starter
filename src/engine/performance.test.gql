@@ -1,0 +1,7 @@
+query CachedQuery {
+
+}
+
+query NotCachedQuery{
+    
+}
