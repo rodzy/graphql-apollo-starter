@@ -4,15 +4,13 @@ import Express from "express";
 import { buildSchema } from "type-graphql";
 import { createConnection } from "typeorm";
 import cors from 'cors'
+import { RegisterResolver } from './modules/user/resolvers/Register';
 
-const TestResolver = () => {
-  return null;
-};
 
 const main = async () => {
   await createConnection();
   const schema = await buildSchema({
-    resolvers: [TestResolver],
+    resolvers: [RegisterResolver],
   });
 
   // Definition on the ApolloServer
@@ -28,14 +26,14 @@ const main = async () => {
   app.use(
       cors({
           credentials:true,
-          origin:"https://localhost:3000"
+          origin:"http://localhost:3000"
       })
   )
 
   // Definition to use the Apollo Server and the playground
   apolloServer.applyMiddleware({app});
   app.listen(4000,()=>{
-      console.log("Server running! On https://localhost:4000/graphql")
+      console.log("Server running! On http://localhost:4000/graphql")
   })
 };
 
