@@ -2,7 +2,7 @@ import { InputType, Field } from "type-graphql";
 import { Length, IsNumber } from "class-validator";
 
 @InputType()
-export class UserInput {
+export class ProductInput {
   @Field()
   @Length(2, 20)
   productName: string;

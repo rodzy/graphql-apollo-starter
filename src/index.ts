@@ -3,38 +3,37 @@ import { ApolloServer } from "apollo-server-express";
 import Express from "express";
 import { buildSchema } from "type-graphql";
 import { createConnection } from "typeorm";
-import cors from 'cors'
-import { RegisterResolver } from './modules/user/resolvers/Register';
-
+import cors from "cors";
+import { UserRegisterResolver } from "./modules/user/resolvers/Register";
+import { ProductRegisterResolver } from "./modules/product/resolvers/Register";
 
 const main = async () => {
   await createConnection();
   const schema = await buildSchema({
-    resolvers: [RegisterResolver],
+    resolvers: [UserRegisterResolver, ProductRegisterResolver],
   });
 
   // Definition on the ApolloServer
   const apolloServer = new ApolloServer({
     schema,
     context: ({ req, res }: any) => ({ req, res }),
-    
   });
   // Definition on a Express Node Server
   const app = Express();
 
   // Definition for the frontend client
   app.use(
-      cors({
-          credentials:true,
-          origin:"http://localhost:3000"
-      })
-  )
+    cors({
+      credentials: true,
+      origin: "http://localhost:3000",
+    })
+  );
 
   // Definition to use the Apollo Server and the playground
-  apolloServer.applyMiddleware({app});
-  app.listen(4000,()=>{
-      console.log("Server running! On http://localhost:4000/graphql")
-  })
+  apolloServer.applyMiddleware({ app });
+  app.listen(4000, () => {
+    console.log("Server running! On http://localhost:4000/graphql");
+  });
 };
 
 main();
