@@ -1,0 +1,25 @@
+#---------------------------------
+#     Generic GraphQL schema
+# This is for orientation purposes
+# The server uses all the types and
+# entities directly using TypeORM
+#---------------------------------
+
+type Query {
+  products: [Product!]!
+  users: [User!]!
+}
+
+type User {
+  id: Int!
+  firstName: String!
+  lastName: String!
+  email: String!
+  password: String!
+}
+
+type Product {
+  id: Int!
+  productName: String!
+  pricing: Float!
+}
