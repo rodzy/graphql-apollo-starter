@@ -4,8 +4,8 @@ import Express from "express";
 import { buildSchema } from "type-graphql";
 import { createConnection } from "typeorm";
 import cors from "cors";
-import { UserRegisterResolver } from "./modules/user/resolvers/Register";
-import { ProductRegisterResolver } from "./modules/product/resolvers/Register";
+import { UserRegisterResolver } from "./modules/user/resolvers/User";
+import { ProductRegisterResolver } from "./modules/product/resolvers/Product";
 
 const main = async () => {
   await createConnection();
