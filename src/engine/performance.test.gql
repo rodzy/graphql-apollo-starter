@@ -1,7 +1,19 @@
 query CachedQuery {
-
+    cachedUsers{
+        id,
+        firstName,
+        lastName,
+        email,
+        password,
+    }
 }
 
 query NotCachedQuery{
-    
+    users{
+        id,
+        firstName,
+        lastName,
+        email,
+        password,
+    }
 }
