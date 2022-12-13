@@ -12,7 +12,7 @@
     "bcrypt": "^5.0.0",
     "class-validator": "^0.12.2",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "graphql": "^15.3.0",
     "graphql-config": "^3.0.0-rc.3",
     "pg": "^8.3.0",
